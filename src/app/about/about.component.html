@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-content>
+        <h2>URL Shortener Algorithm Description</h2>
+        <mat-card-title *ngIf="(descriptionService.description$ | async) as description">
+            <p>{{description.value}}</p>
+        </mat-card-title>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="primary" (click)="goToHomePage()">Home</button>
+        <button mat-button color="primary" (click)="openDialog()" *ngIf="isAdmin">Edit Description</button>
+    </mat-card-actions>
+</mat-card>

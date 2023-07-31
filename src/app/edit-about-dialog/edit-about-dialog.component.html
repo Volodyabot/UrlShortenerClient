@@ -1,0 +1,9 @@
+<form #editForm (ngSubmit)="edit()">
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput class="max-height" style="height: 250px;" placeholder="Enter description..."
+            [(ngModel)]="model.description" name="description"></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-flat-button color="primary" style="width: 100%; height: 56px;" type="submit">Submit</button>
+</form>

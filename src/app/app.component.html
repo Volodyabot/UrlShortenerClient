@@ -1,0 +1,25 @@
+<mat-toolbar>
+  <span>Link Shortener</span>
+  <span class="example-spacer"></span>
+  <button mat-button color="primary" (click)="goToHomePage()">Home</button>
+  <button mat-button color="primary" (click)="goToAboutPage()">About</button>
+  <button mat-button color="primary" (click)="goTologinPage()"
+    *ngIf="!(accountService.currentUser$ | async)">Login/Register</button>
+
+  <button mat-flat-button color="primary" [matMenuTriggerFor]="menu"
+    *ngIf="accountService.currentUser$ | async as user">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      {{user.userName}}
+      <mat-icon style="font-size: 20px; height: 20px;">person</mat-icon>
+    </div>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <span>Log out</span>
+    </button>
+  </mat-menu>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>

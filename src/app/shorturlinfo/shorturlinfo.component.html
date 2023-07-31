@@ -1,0 +1,13 @@
+<mat-card *ngIf="url">
+    <mat-card-content>
+        <h2>Long URL: {{ url.longUrl }}</h2>
+        <h2>Short URL: {{ url.shortUrl }}</h2>
+        <mat-card-title>
+            <p>Created By: {{ url.shortUrlInfo.createdBy }}</p>
+            <p>Created Date: {{ url.shortUrlInfo.createdDate | date }}</p>
+        </mat-card-title>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color="primary" (click)="goToHomePage()">Home</button>
+    </mat-card-actions>
+</mat-card>
